@@ -22,15 +22,9 @@ function UpdateAt() {
     refreshInterval: 5000,
   });
   let updatedAtText = "Carregando...";
-  let db_version = "Carregando...";
-  let db_max_connections = "Carregando...";
-  let db_opened_connections = "Carregando...";
   if (!isLoading && data) {
     console.log(data);
     updatedAtText = new Date(data.updated_at).toLocaleString("pt-BR");
-    db_version = data.dependencies.database.version;
-    db_max_connections = data.dependencies.database.max_connections;
-    db_opened_connections = data.dependencies.database.opened_connections;
   }
   return (
     <span style={{ fontSize: "15px" }}>
